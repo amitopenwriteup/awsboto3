@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>AWS VPC Dashboard</title></head>
+<body>
+<h2>Existing VPCs</h2>
+<ul>
+  {% for vpc in vpcs %}
+    <li>VPC ID: {{ vpc.VpcId }}, CIDR: {{ vpc.CidrBlock }}</li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('create_vpc') }}">Create New VPC</a>
+</body>
+</html>
+

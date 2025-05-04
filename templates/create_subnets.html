@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Create Subnets</title></head>
+<body>
+<h2>Create Subnets for VPC: {{ vpc_id }}</h2>
+
+{% if subnets %}
+  <h3>Subnets created:</h3>
+  <ul>
+    {% for id, cidr in subnets %}
+      <li>{{ id }} - {{ cidr }}</li>
+    {% endfor %}
+  </ul>
+  <a href="/">Go Home</a>
+{% else %}
+  <form method="post">
+    <label>Number of subnets to create:</label>
+    <input type="number" name="count" min="1" required>
+    <button type="submit">Create Subnets</button>
+  </form>
+{% endif %}
+
+</body>
+</html>
+

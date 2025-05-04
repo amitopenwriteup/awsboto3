@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Create VPC</title></head>
+<body>
+<h2>Create a New VPC</h2>
+<form method="post">
+    <label for="cidr">CIDR Block:</label>
+    <input type="text" name="cidr" required>
+    {% if exists %}
+        <p style="color:red;">VPC with CIDR {{ cidr }} already exists. Delete it?</p>
+        <input type="hidden" name="cidr" value="{{ cidr }}">
+        <button type="submit" name="confirm" value="yes">Yes, delete and recreate</button>
+        <a href="/">Cancel</a>
+    {% else %}
+        <button type="submit">Create VPC</button>
+    {% endif %}
+</form>
+</body>
+</html>
+
