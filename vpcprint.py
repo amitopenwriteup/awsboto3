@@ -1,5 +1,7 @@
 import boto3
 
+#https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_vpcs.html#
+
 # Use AWS credentials from the default profile or specify profile_name
 session = boto3.Session(profile_name='default')  # omit profile_name to use default
 
