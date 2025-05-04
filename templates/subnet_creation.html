@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Subnets</title>
+</head>
+<body>
+    <h1>Create Subnets for VPC {{ vpc_id }} (CIDR: {{ cidr }})</h1>
+    <form method="post">
+        <label for="num_subnets">Number of subnets to create:</label>
+        <input type="number" id="num_subnets" name="num_subnets" min="1" required>
+        <button type="submit">Create Subnets</button>
+    </form>
+</body>
+</html>
+
