@@ -1,21 +1,47 @@
-<h3>Existing VPCs:</h3>
-<ul>
-  {% for vpc in vpcs %}
-    <li>{{ vpc['VpcId'] }} - {{ vpc['CidrBlock'] }} 
-        <a href="/?cidr={{ vpc['CidrBlock'] }}">View Details</a></li>
-  {% else %}
-    <li>No VPCs found</li>
-  {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VPC Management</title>
+  <style>
+    body {
+      background-color: blue;
+      color: white;
+    }
+    h3 {
+      color: white;
+    }
+    a {
+      color: lightblue;
+    }
+  </style>
+</head>
+<body>
 
-<form method="POST">
-  Enter CIDR block to create a new VPC: <input type="text" name="cidr"><br>
-  {% if exists %}
-    VPC with CIDR {{ cidr }} exists. Do you want to delete and recreate it?
-    <input type="hidden" name="confirm_delete" value="yes">
-    <button type="submit">Yes, delete and recreate</button>
-  {% else %}
-    <button type="submit">Create VPC</button>
-  {% endif %}
-</form>
+  <h1>Welcome to OpenWriteUp VPC</h1>
+
+  <h3>Existing VPCs:</h3>
+  <ul>
+    {% for vpc in vpcs %}
+      <li>{{ vpc['VpcId'] }} - {{ vpc['CidrBlock'] }}
+          <a href="/?cidr={{ vpc['CidrBlock'] }}">View Details</a></li>
+    {% else %}
+      <li>No VPCs found</li>
+    {% endfor %}
+  </ul>
+
+  <form method="POST">
+    Enter CIDR block to create a new VPC: <input type="text" name="cidr"><br>
+    {% if exists %}
+      VPC with CIDR {{ cidr }} exists. Do you want to delete and recreate it?
+      <input type="hidden" name="confirm_delete" value="yes">
+      <button type="submit">Yes, delete and recreate</button>
+    {% else %}
+      <button type="submit">Create VPC</button>
+    {% endif %}
+  </form>
+
+</body>
+</html>
 
