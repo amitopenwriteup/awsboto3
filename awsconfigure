@@ -1,0 +1,8 @@
+#Run command
+aws configure
+
+#AWS Access Key ID [****************ECXL]:
+#AWS Secret Access Key [****************5nUl]:
+#Default region name [us-east-1]:
+#Default output format [json]:
+
